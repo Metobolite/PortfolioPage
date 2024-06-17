@@ -1,13 +1,158 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+html{
+  scroll-behavior:smooth ;
+}
+.navbar {
+  padding: 20px;
+  margin: 0;
+  background-color: rgb(245, 243, 239);
+  font-weight: bold;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+  box-shadow: 0 0 10px rgba(0,0,0,.09)
+}
+.navbar.fixed{
+  background-color: rgb(245, 243, 239);
+  transition: .3s, ease-in-out;
+  position: fixed;
+}
+.navbar h1 {
+  color: black;
+  border: 0;
+  padding: 4px;
+  font-size: 1.7rem;
+}
+.links{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar a {
+  text-decoration: none;
+  padding: 9px;
+  font-size: large;
+  display: flex;
+}
+.navbar ul{
+  @apply hidden md:flex
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content {
+  margin: 40px auto;
+}
+.hero-main{
+  @apply items-center flex-col pt-32 pb-20 md:flex-row flex gap-14 md:gap-40 relative justify-center;
+  /* height: 90vh; */
+}
+.hero-text{
+  @apply flex flex-col max-w-[50rem] relative text-[20px] text-center
+}
+.hero-img{
+  @apply bg-[url(./photos/metefoto.jpeg)] bg-[50%] bg-cover h-[23rem] w-80 border-[3px] border-[solid] border-[black] rounded-[100%]
+}
+#linkedin{
+  @apply bg-[url(./photos/linkedin2.png)] items-center flex relative 
+  justify-center h-6 w-6 bg-cover [text-indent:-999px] mt-[15px]
+}
+#github{
+  @apply bg-[url(./photos/github.png)] items-center flex relative justify-center h-6 w-[1.53rem] 
+  bg-cover [text-indent:-999px] mt-[15px]
+}
+.home span{
+  @apply flex gap-4 justify-center
+}
+.contents{
+  @apply items-center flex flex-col pb-[100px] bg-[rgb(245,_243,_239)] font-bold
+}
+.contents h1{
+  padding: 2rem;
+}
+.contents h2{
+  padding: 5rem;
+}
+.aboutAll{
+  @apply mt-[150px] md:ml-8 items-center justify-center flex flex-col md:flex-row text-center md:gap-12;
+}
+.aboutFoto{
+  @apply relative bg-[url(./photos/coding.jpg)] bg-cover w-80 h-72 md:w-3/6 md:h-96 rounded-3xl md:pl-64
+}
+.aboutText{
+  @apply flex-col md:flex-row text-center justify-center items-center md:text-left md:pr-32
+}
+.aboutText h2{
+  @apply pt-4 pl-2 text-[1.4rem] items-center text-center md:text-left text-green-700 font-bold
+}
+.aboutText h3{
+  @apply pt-6 md:pt-12 pl-2 text-[1.2rem] items-center md:text-left font-bold
+}
+.aboutText p{
+  @apply md:pl-2 pt-8 text-[1.1rem] items-center md:text-left 
+
+}
+.contactAll{
+  @apply flex-col md:flex-row mt-[150px] bg-[rgb(245,_243,_239)] md:h-[50vh] pt-24 md:pr-48 pb-32 md:pl-32 text-[1.1rem]
+}
+.contactInfo{
+  @apply mt-12 flex gap-12 md:gap-48 items-center flex-col md:flex-row
+}
+.contactAll h3 {
+  font-size: 1.4rem;
+}
+.contact{
+  @apply text-center md:text-left
+}
+#mail{
+  @apply bg-[url(./photos/mail.png)] flex h-[2.8rem] w-16 bg-cover [text-indent:-999px] rounded-[100%] items-center
+}
+.contactInfo span{
+  display: flex;
+}
+.mail{
+  display: flex;
+  gap: 0.1rem;
+  flex-direction: column;
+}
+.mailAll{
+  @apply flex items-center gap-4
+}
+#whatsapp{
+  @apply bg-[url(./photos/whatsapp.png)] flex items-center h-[2.8rem] w-[2.9rem] bg-cover [text-indent:-999px] rounded-[100%]
+}
+.number{
+  @apply flex gap-[0.1rem] flex-col
+}
+.numberAll{
+  @apply flex items-center gap-4
+}
+.footerAll{
+  @apply bg-[rgba(0,_0,_0,_0.81)] px-[0] py-16 md:pl-64 md:pr-80
+}
+.footerAll h3 {
+  @apply text-[white] text-[larger];
+}
+
+.footer1{
+  @apply md:flex text-center justify-center md:justify-between flex-wrap md:flex-row gap-8;
+  display:flex;
+}
+
+#linkedin2{
+  @apply flex items-center bg-[url(./photos/linkedin.png)] h-[1.4rem] w-[1.4rem] bg-cover [text-indent:-999px]
+}
+#instagram{
+  @apply bg-cover flex items-center bg-[url(./photos/instagram.png)] h-8 w-8 [text-indent:-999px] rounded-[100%] border-[white]
+}
+.footerSocial{
+  @apply items-center flex gap-4
 }
